@@ -47,12 +47,24 @@ function deleteSelected() {
     }
 }
 
-// Enregistrer le design sous forme d'image HD et envoyer le formulaire
-function prepareOrder(event) {
-    // Transformer le rendu en base64 (DataURL)
-    const dataURL = canvas.toDataURL({
-        format: 'png',
-        quality: 1.0
-    });
-    document.getElementById('designData').value = dataURL;
+// 📱 Fonction Envoi WhatsApp (Adaptée pour GitHub Pages)
+function sendToWhatsApp() {
+    const name = document.getElementById('clientName').value;
+    const phone = document.getElementById('clientPhone').value;
+
+    if (!name || !phone) {
+        alert("Amanek ikteb esmek w numéro mte3ek!");
+        return;
+    }
+
+    // ⚠️ Baddal le numéro hedha b'numéro WhatsApp mte3ek (m3a 216 fi l-awel)
+    const myPhoneNumber = "21620000000"; 
+
+    // Préparation du message
+    const message = `Bonjour! Je souhaite passer une commande.\n👤 Nom: ${name}\n📞 Tél: ${phone}\n🎨 Produit personnalisé créé sur le site web.`;
+
+    // Redirection vers WhatsApp
+    const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`;
+    
+    window.open(whatsappUrl, '_blank');
 }
