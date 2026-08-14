@@ -37,18 +37,18 @@
 
             <hr>
 
-            <form id="orderForm" action="save_order.php" method="POST">
-                <input type="hidden" name="design_data" id="designData">
+            <!-- Section Commande WhatsApp (Adaptée pour GitHub Pages) -->
+            <div class="order-box">
                 <div class="control-group">
                     <label>Votre Nom:</label>
-                    <input type="text" name="client_name" required placeholder="Nom & Prénom">
+                    <input type="text" id="clientName" placeholder="Nom & Prénom">
                 </div>
                 <div class="control-group">
                     <label>Téléphone:</label>
-                    <input type="tel" name="client_phone" required placeholder="20 000 000">
+                    <input type="tel" id="clientPhone" placeholder="20 000 000">
                 </div>
-                <button type="submit" class="btn-success" onclick="prepareOrder(event)">🛒 Commander Maintenant</button>
-            </form>
+                <button type="button" class="btn-success" onclick="sendToWhatsApp()">💬 Commander via WhatsApp</button>
+            </div>
         </div>
 
         <!-- Canvas Visualizer Area -->
