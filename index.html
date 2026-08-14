@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio de Personnalisation 3D/Live</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Inclusion de Fabric.js pour la gestion du Canvas interactif -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar Controls -->
+        <div class="sidebar">
+            <h2>🎨 Personnalisation</h2>
+            
+            <div class="control-group">
+                <label> Couleur du produit:</label>
+                <input type="color" id="bgColor" value="#ffffff">
+            </div>
+
+            <div class="control-group">
+                <label> Ajouter du texte:</label>
+                <input type="text" id="textInput" placeholder="Ex: Mon Design 2026">
+                <button onclick="addText()">Ajouter Texte</button>
+            </div>
+
+            <div class="control-group">
+                <label> Charger une image:</label>
+                <input type="file" id="imageLoader" accept="image/*">
+            </div>
+
+            <div class="control-group">
+                <button class="btn-danger" onclick="deleteSelected()">Effacer l'élément</button>
+            </div>
+
+            <hr>
+
+            <form id="orderForm" action="save_order.php" method="POST">
+                <input type="hidden" name="design_data" id="designData">
+                <div class="control-group">
+                    <label>Votre Nom:</label>
+                    <input type="text" name="client_name" required placeholder="Nom & Prénom">
+                </div>
+                <div class="control-group">
+                    <label>Téléphone:</label>
+                    <input type="tel" name="client_phone" required placeholder="20 000 000">
+                </div>
+                <button type="submit" class="btn-success" onclick="prepareOrder(event)">🛒 Commander Maintenant</button>
+            </form>
+        </div>
+
+        <!-- Canvas Visualizer Area -->
+        <div class="main-preview">
+            <div class="canvas-wrapper" id="productWrapper">
+                <!-- Image de fond du produit (ex: T-shirt / Mug / Box) -->
+                <canvas id="tshirtCanvas" width="400" height="450"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

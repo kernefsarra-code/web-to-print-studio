@@ -1,0 +1,104 @@
+:root {
+    --bg-dark: #121214;
+    --card-dark: #1e1e24;
+    --accent: #00e676;
+    --text-light: #f4f4f5;
+    --border: #2e2e38;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 320px;
+    background-color: var(--card-dark);
+    padding: 20px;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 4px 0 10px rgba(0,0,0,0.3);
+}
+
+.sidebar h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--accent);
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-size: 0.85rem;
+    color: #a1a1aa;
+}
+
+input[type="text"], input[type="tel"], input[type="color"] {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background-color: #121214;
+    color: #fff;
+    outline: none;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2b2d42;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #3d405b;
+}
+
+.btn-danger {
+    background-color: #e63946;
+}
+.btn-danger:hover { background-color: #c1121f; }
+
+.btn-success {
+    background-color: var(--accent);
+    color: #000;
+}
+.btn-success:hover { background-color: #00c853; }
+
+.main-preview {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #1a1a24 0%, #0d0d11 100%);
+}
+
+.canvas-wrapper {
+    background-image: url('https://raw.githubusercontent.com/fabricjs/fabric.js/master/posts/custom-picker/tshirt.png'); /* Mockup T-shirt de base */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+canvas {
+    border: 1px dashed rgba(255,255,255,0.2);
+}
