@@ -23,7 +23,7 @@
             <div class="control-group">
                 <label> Ajouter du texte:</label>
                 <input type="text" id="textInput" placeholder="Ex: Mon Design 2026">
-                <button onclick="addText()">Ajouter Texte</button>
+                <button type="button" onclick="addText()">Ajouter Texte</button>
             </div>
 
             <div class="control-group">
@@ -32,12 +32,12 @@
             </div>
 
             <div class="control-group">
-                <button class="btn-danger" onclick="deleteSelected()">Effacer l'élément</button>
+                <button type="button" class="btn-danger" onclick="deleteSelected()">Effacer l'élément</button>
             </div>
 
             <hr>
 
-            <!-- Section Commande WhatsApp (Adaptée pour GitHub Pages) -->
+            <!-- Section Commande WhatsApp -->
             <div class="order-box">
                 <div class="control-group">
                     <label>Votre Nom:</label>
@@ -51,10 +51,9 @@
             </div>
         </div>
 
-        <!-- Canvas Visualizer Area -->
+        <!-- Canvas Visualizer Area (Zone d'affichage du produit) -->
         <div class="main-preview">
             <div class="canvas-wrapper" id="productWrapper">
-                <!-- Image de fond du produit (ex: T-shirt / Mug / Box) -->
                 <canvas id="tshirtCanvas" width="400" height="450"></canvas>
             </div>
         </div>
